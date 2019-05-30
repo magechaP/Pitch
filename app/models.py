@@ -95,3 +95,24 @@ class Pitch(db.Model):
     def get_pitches(id):
         pitches = Pitch.query.filter_by(category_id=id).all()
         return pitches
+
+# comments
+class Comments(db.Model):
+    '''User comment model for each pitch '''
+
+    __tablename__ = 'comments'
+
+    # add columns
+    id = db.Column(db. Integer, primary_key=True)
+    opinion = db.Column(db.String(255))
+    time_posted = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    pitches_id = db.Column(db.Integer, db.ForeignKey("pitches.id"))
+
+
+    def save_comment(self):
+        '''
+        Save the Comments/comments per pitch
+        '''
+        db.session.add(self)
+        db.session.commit()
