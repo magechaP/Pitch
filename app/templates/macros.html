@@ -25,4 +25,14 @@
 
   </div>
   {% endfor %}
-{% endmacro %}  
+{% endmacro %}
+
+{% macro displaySpecificPitch(specific_pitch_list) %}
+ {% for comment in specific_pitch_list %}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+        <hr>
+        <p style="color:orange">{{comment.opinion}} </p>
+         <p style="text-align:right; color:#555652; font-size:10px;">{{comment.time_posted.strftime('%Y/%m/%d || %r') }}</p>
+    </div>
+  {% endfor %}
+{% endmacro %}
