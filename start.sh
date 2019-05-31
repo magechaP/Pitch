@@ -3,4 +3,4 @@ export SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://petermagecha:petermagecha@
 export MAIL_USERNAME='magechapeter@gmail.com'
 export MAIL_PASSWORD='yangvigilanti'
 
-python3.6 manage.py server
+python3.6 manage.py serverc

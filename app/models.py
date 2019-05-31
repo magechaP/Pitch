@@ -139,5 +139,5 @@ class Votes(db.Model):
 
     @classmethod
     def get_votes(cls,user_id,pitches_id):
-        votes = Vote.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
+        votes = Votes.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
         return votes
