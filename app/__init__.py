@@ -1,15 +1,13 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from config import config_options
+from flask import wtforms
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 login_manager = LoginManager()
-
-def create_app(config_name):
-
 
 def create_app(config_name):
 
