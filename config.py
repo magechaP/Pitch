@@ -15,3 +15,15 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     
+class ProdConfig(Config):
+    pass
+
+
+class DevConfig(Config):
+    ENV = 'development'
+    DEBUG = True
+
+config_options = {
+  'development':DevConfig,
+  'production':ProdConfig
+}            

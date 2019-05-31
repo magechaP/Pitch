@@ -4,6 +4,7 @@ from flask_login import login_user,logout_user,login_required
 from ..models import User
 from .forms import RegistrationForm, LoginForm
 from .. import db
+from flask import render_template,redirect,url_for
 
 # registration route
 @auth.route('templates/auth/reqister',methods=['GET','POST'])
