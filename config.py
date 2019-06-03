@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    '''Main configuration class'''
+    '''Main configuration class    '''
 
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
