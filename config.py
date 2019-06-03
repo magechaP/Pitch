@@ -5,7 +5,7 @@ class Config:
 
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql + psycopg2://petermagecha:password@localhost/pitch'
+    
 
     SECRET_KEY = "yang lanti"
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
@@ -14,13 +14,14 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI=os.environ.get('SQLALCHEMY_DATABASE_URL')
 
 
 class DevConfig(Config):
-    ENV = 'development'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://petermagecha:1234@localhost/pitch'
     DEBUG = True
 
 config_options = {

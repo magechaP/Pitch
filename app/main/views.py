@@ -141,7 +141,7 @@ def vote_count(id):
     '''
     View function to return the total vote count per pitch
     '''
-    votes = Votes.query.filter_by(user_id=user_id, line_id=line_id).all()
+    votes = Votes.query.filter_by(user_id=user_id,line_id=user_id).all()
 
     total_votes = votes.count()
 
